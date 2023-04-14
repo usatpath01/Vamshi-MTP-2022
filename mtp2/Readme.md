@@ -15,21 +15,20 @@ awk '{$1=$1};!seen[$0]++' ss.log > tmp && mv tmp ss.log
 Finally run timeline.py to get the output in a csv file
 
 Order for running - 
-Application has to be already deployed.
-service nginx stop; service postgresql stop; service app stop;
-
-Run tracee, Run socket statistics
-
-service nginx start; service postgresql start; service app start;
-
-You can use automater.py to automate using the application
-
-Stop tracee and socket statistics
-Run the awk command.
-Run the timeline.py
+1. Application has to be already deployed.
+2. service nginx stop; service postgresql stop; service app stop;
+3. Run tracee, Run socket statistics
+4. service nginx start; service postgresql start; service app start;
+5. You can use automater.py to automate using the application
+6. Stop tracee and socket statistics
+7. Run the awk command.
+8. Run timeline.py
 
 
 **Filetracking**
+
 filedel.py - tracks renames and deletes
+
 filetrack.py - tracks reads and writes
+
 The files to track are currently hardcoded. Change them before running the code.
